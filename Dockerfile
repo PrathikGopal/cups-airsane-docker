@@ -37,7 +37,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 # Copy compiled AirSane binaries from the builder stage
 COPY --from=builder /usr/local/bin/airsaned /usr/local/bin/airsaned
-COPY --from=builder /usr/local/etc/airsane /etc/airsane
+#COPY --from=builder /usr/local/etc/airsane /etc/airsane
 
 # Configure CUPS to allow remote network access
 RUN sed -i 's/Listen localhost:631/Listen 0.0.0.0:631/' /etc/cups/cupsd.conf && \
